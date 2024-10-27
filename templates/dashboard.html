@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="text-align: center;">
+    <h1>Analysis Results for {{ analysis['social_media_usage'] }}</h1>
+    <p>Your social media usage: {{ analysis['social_media_usage'] }}</p>
+    <p>Average social media usage: {{ analysis['avg_social_media_usage'] }}</p>
+    
+    <p>Your online shopping habits: {{ analysis['online_shopping'] }}</p>
+    <p>Average online shopping habits: {{ analysis['avg_online_shopping'] }}</p>
+    
+    <h2>Risk Score: {{ risk }}</h2>
+    
+    <h3>Visualizations</h3>
+    <img src="{{ url_for('static', filename='social_media_usage.png') }}" alt="Social Media Usage">
+    <img src="{{ url_for('static', filename='online_shopping_usage.png') }}" alt="Online Shopping Usage">
+</body>
+</html>
