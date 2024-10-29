@@ -1,5 +1,5 @@
 import matplotlib
-matplotlib.use('Agg')  # Use Agg backend for non-GUI environments
+matplotlib.use('Agg')  
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
@@ -9,10 +9,10 @@ import base64
 
 
 def generate_visualizations(social_media_usage, online_shopping):
-    # Load dataset
+
     df = pd.read_csv('data/user_data.csv')
     
-    # Social Media Usage Graph
+
     plt.figure(figsize=(10, 6))
     sns.histplot(df['social_media_usage'], bins=10, kde=True, color='blue', label="Others")
     plt.axvline(int(social_media_usage), color='red', label="Your Usage", linestyle="--")
@@ -20,13 +20,13 @@ def generate_visualizations(social_media_usage, online_shopping):
     plt.xlabel('Social Media Usage (times per day)')
     plt.ylabel('Frequency')
     plt.legend()
-    # Save to buffer
+
     buffer1 = BytesIO()
     plt.savefig(buffer1, format="png")
     plt.close()
     social_media_image = base64.b64encode(buffer1.getvalue()).decode()
 
-    # Online Shopping Habits Graph
+ 
     plt.figure(figsize=(10, 6))
     sns.histplot(df['online_shopping'], bins=10, kde=True, color='green', label="Others")
     plt.axvline(int(online_shopping), color='red', label="Your Shopping", linestyle="--")
@@ -34,7 +34,7 @@ def generate_visualizations(social_media_usage, online_shopping):
     plt.xlabel('Online Shopping Frequency (times per month)')
     plt.ylabel('Frequency')
     plt.legend()
-    # Save to buffer
+
     buffer2 = BytesIO()
     plt.savefig(buffer2, format="png")
     plt.close()

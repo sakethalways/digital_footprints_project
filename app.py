@@ -11,21 +11,20 @@ def index():
 
 @app.route('/results', methods=['POST'])
 def results():
-    # Get user input from the form
+
     username = request.form['username']
     social_media_usage = request.form['social_media']
     online_shopping = request.form['online_shopping']
     
-    # Analyze footprints and calculate risk score
+
     analysis_result = analyze_footprints(social_media_usage, online_shopping)
     risk_score = calculate_risk(social_media_usage, online_shopping)
     
-    # Generate visualizations as base64 strings
+
     social_media_image, shopping_image = generate_visualizations(social_media_usage, online_shopping)
-    
-    # Determine recommendations based on risk score
+   
     if risk_score < 30:
-        risk_message = "Low risk. Your online activity is fairly minimal."
+        risk_message = "Low risk. your online activity is fairly minimal."
         recommendations = ["You're doing great! Just keep an eye on your privacy settings from time to time."]
     elif 30 <= risk_score <= 50:
         risk_message = "Moderate risk. Consider being more cautious with your online activity."
@@ -48,7 +47,7 @@ def results():
             "Consider consulting online privacy resources to secure your digital presence."
         ]
 
-    # Render results.html with the analysis, risk score, and images
+  
     return render_template('results.html', 
                            analysis=analysis_result, 
                            risk=risk_score, 

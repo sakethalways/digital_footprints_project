@@ -10,13 +10,13 @@
     <div class="container2">
         <h1>Digital Footprint Analysis Results</h1>
 
-        <!-- Risk Score Section -->
+
         <div class="risk-score {% if risk < 30 %}low-risk{% elif 30 <= risk <= 50 %}moderate-risk{% elif 50 < risk <= 80 %}high-risk{% else %}severe-risk{% endif %}">
             <h2>Risk Score: {{ risk }} / 100</h2>
             <p class="line">{{ risk_message }}</p>
         </div>
 
-        <!-- Social Media Usage Section -->
+
         <div class="results-section">
             <h3>Social Media Usage</h3>
             <p><strong>Your Usage:</strong> {{ analysis['social_media_usage'] }} times/day</p>
@@ -24,7 +24,7 @@
             <img src="data:image/png;base64,{{ social_media_image }}" alt="Social Media Usage Chart">
         </div>
 
-        <!-- Online Shopping Frequency Section -->
+
         <div class="results-section">
             <h3>Online Shopping Habits</h3>
             <p><strong>Your Shopping Frequency:</strong> {{ analysis['online_shopping'] }} times/month</p>
@@ -32,7 +32,7 @@
             <img src="data:image/png;base64,{{ shopping_image }}" alt="Online Shopping Chart">
         </div>
 
-        <!-- Recommendations Section -->
+
         <div class="recommendations">
             <h3>Recommendations for Managing Your Digital Footprint</h3>
             <ul>
