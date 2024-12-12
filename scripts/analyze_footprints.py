@@ -2,7 +2,7 @@ import pandas as pd
 
 def analyze_footprints(social_media_usage, online_shopping):
 
-    df = pd.read_csv('data/user_data.csv') 
+    df = pd.read_csv('data/user_data_large.csv') 
     
 
     avg_social_media = df['social_media_usage'].mean()
